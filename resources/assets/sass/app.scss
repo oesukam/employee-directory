@@ -1,0 +1,30 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+.hero-unit {
+    margin-top: -15px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    color: inherit;
+    background-color: #eee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    img {
+        padding: 20px;
+        max-width: 100%;
+    }
+    .col-md-7 {
+        padding-top: 20px;
+    }
+}
+
+input#keyword {
+    border: 1px solid transparent;
+    border-color: #ccc;
+    border-radius: 4px;
+    height: 33px;
+    padding: 10px;
+}
+
