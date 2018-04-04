@@ -6,7 +6,7 @@
     @if (Auth::check())
         <div class="row">
             <div class="col-md-6">
-                <a href='/departments/create'><button class="btn btn-success"><i class="fa fa-plus-square"></i> New Department</button></a>
+                <a href='{{ route('departments.create') }}'><button class="btn btn-success"><i class="fa fa-plus-square"></i> New Department</button></a>
             </div>
         </div>
         <hr/>
@@ -27,12 +27,12 @@
                     @if(isset($departments))
                         @foreach ($departments as $department)
                             <tr>
-                                <td><a href="{{url('departments/'.$department->id)}}" >{{$department->name}}</a></td>
+                                <td><a href="{{url('/departments/'.$department->id)}}" >{{$department->name}}</a></td>
                                 <td>{{$department->office_number}}</td>
                                 <td>{{$department->manager}}</td>
                                 <td>
                                     @if (Auth::check())
-                                        <a href="/departments/{{$department->id}}/edit">
+                                        <a href="{{ url('/departments/' . $department->id .'/edit') }}">
                                             <button class="btn btn-success"><i class="fa fa-pencil-square"></i> Edit</button>
                                         </a>
                                         <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
@@ -40,7 +40,7 @@
                                             Delete
                                         </button>
                                     @endif
-                                    <a href="/departments/{{$department->id}}/employees">
+                                    <a href="{{ url('departments/' . $department->id . 'employees') }}">
                                         <button class="btn btn-primary"><i class="fa fa-eye"></i> View Employees</button>
                                     </a>
                                 </td>
@@ -70,7 +70,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="/departments/{{ $department->id or '' }}">
+                <form method="POST" action="{{ url('departments/' . ($department->id or '')) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

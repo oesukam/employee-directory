@@ -14,7 +14,7 @@
                 <td>{{$employee->email}}</td>
                 <td>
                     @if (Auth::check())
-                        <a href="/employees/{{$employee->id}}/edit"><button class="btn btn-success"><i class="fa fa-pencil-square"></i> Edit</button></a>
+                        <a href="{{ url('/employees/' . $employee->id '/edit') }}"><button class="btn btn-success"><i class="fa fa-pencil-square"></i> Edit</button></a>
                         <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
                             <i class="fa fa-times-circle"></i>
                             Delete

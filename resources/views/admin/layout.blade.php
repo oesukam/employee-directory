@@ -7,7 +7,7 @@
     <title>{{ config('blog.title') }} - Admin</title>
 
     {{-- Styles --}}
-      <link href="/css/app.css" rel="stylesheet">
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       @yield('styles')
 
       {{-- HTML5 Shim and Respond.js for IE8 support --}}
@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">{{ config('blog.title') }}</a>
+            <a class="navbar-brand" href="{{ url('/') }}">{{ config('blog.title') }}</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-menu">
             @include('admin.partials.navbar')
@@ -38,7 +38,7 @@
 
 @yield('content')
 
-<script src="/js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @yield('script')
 
 </body>

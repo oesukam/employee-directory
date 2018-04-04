@@ -20,7 +20,7 @@
             @include('admin.partials.success')
 
             <form class="form-horizontal" role="form" method="POST"
-                  action="/departments">
+                  action="{{ url('/departments') }}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
               @include('departments._form')

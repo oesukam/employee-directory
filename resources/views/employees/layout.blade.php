@@ -6,7 +6,7 @@
     @if (Auth::check())
         <div class="row">
             <div class="col-md-6">
-                <a href="/employees/create"><button class="btn btn-success"><i class="fa fa-plus-square"></i> Add Employee</button></a>
+                <a href="{{ url('/employees/create') }}"><button class="btn btn-success"><i class="fa fa-plus-square"></i> Add Employee</button></a>
             </div>
         </div>
         <hr/>
@@ -52,7 +52,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="/employees/{{ $employee->id or '' }}">
+                <form method="POST" action="{{ url('/employees/' . ($employee->id or '')) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

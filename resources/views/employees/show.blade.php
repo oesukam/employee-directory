@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <a href="/employees/"><button class="btn btn-success"><i class="fa fa-chevron-circle-left"></i> Back</button></a>
+    <a href="{{ url('/employees/') }}"><button class="btn btn-success"><i class="fa fa-chevron-circle-left"></i> Back</button></a>
 
 </div>
 
